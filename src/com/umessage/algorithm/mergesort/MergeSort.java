@@ -1,7 +1,15 @@
 package com.umessage.algorithm.mergesort;
 
 /**
- * 归并排序，递归的经典使用。最大时间复杂度O(NlogN)
+ * 归并排序，递归的经典使用。最大时间复杂度O(NlogN)。
+ * <p>
+ * 归并思想：将源数组分成两个部分，一般是从中间位置分开。依次对左右两个子数组进行排序，再将排序后的左右子数组依次比较，将较小的值拷贝到临时数组中。
+ * 当某个子数组中元素为空后（子数组遍历并移动完成），将另一个子数组中剩余的内容依次追加到临时数组中即可。
+ * </p>
+ * 
+ * <p>
+ * 核心是递归的使用。源数组分隔成左右子数组，每个子数组又可以分隔为子数组。然后依次排序，再将排序后的子数组拷贝到源数组中。
+ * </p>
  * 
  * @author licb
  * 
@@ -55,15 +63,17 @@ public class MergeSort {
 	}
 
 	private static void cycleMerge(int[] source, int[] tmpArray, int startIndex, int endIndex) {
-		if (startIndex == endIndex) {// 空数组不用排序
+		if (startIndex == endIndex) {// 空数组不用排序；并且当数组中只有两个元素时，也不会再细分数组，而是进入merge()方法进行排序。
 			return;
 		} else {
-			// 递归对子数组进行排序
-			int middle = (startIndex + endIndex) / 2;
-			cycleMerge(source, tmpArray, startIndex, middle);
-			cycleMerge(source, tmpArray, middle + 1, endIndex);
-			// 执行真正排序
-			merge(source, tmpArray, startIndex, middle + 1, endIndex);
+			if (startIndex < endIndex) {// 递归对子数组进行排序
+				int middle = (startIndex + endIndex) / 2;
+				cycleMerge(source, tmpArray, startIndex, middle);
+				cycleMerge(source, tmpArray, middle + 1, endIndex);
+				// 执行真正排序
+				merge(source, tmpArray, startIndex, middle + 1, endIndex);
+			}
+
 		}
 
 	}
