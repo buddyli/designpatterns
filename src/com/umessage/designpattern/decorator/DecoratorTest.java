@@ -36,7 +36,7 @@ public class DecoratorTest {
 		espresso2 = new Milk(espresso2);// .1
 		System.out.println(espresso2.description() + ", " + espresso2.cost());
 
-		// 摩卡摩卡牛奶黑咖啡：由两份摩卡、一份牛奶来修饰
+		// 摩卡摩卡牛奶黑咖啡：一杯黑咖啡，由两份摩卡、一份牛奶来修饰
 		Beverage espresso3 = new BlackCoffee();// 1.0
 		espresso3 = new Mocha(espresso3);// .25
 		espresso3 = new Mocha(espresso3);// .25
