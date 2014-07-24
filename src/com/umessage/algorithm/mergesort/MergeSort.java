@@ -30,7 +30,7 @@ public class MergeSort {
 		System.out.println(source);
 	}
 
-	private static void merge(int[] source, int[] tmpArray, int left, int middle, int right) {
+	private static void mergeSort(int[] source, int[] tmpArray, int left, int middle, int right) {
 		int leftEnd = middle - 1;// 左子数组最后一个变量的下标
 		int tmpIndex = 0;// 临时数组保存变量的起始位置
 		int n = right - left + 1;// 临时数组保存的变量个数
@@ -71,7 +71,7 @@ public class MergeSort {
 				cycleMerge(source, tmpArray, startIndex, middle);
 				cycleMerge(source, tmpArray, middle + 1, endIndex);
 				// 执行真正排序
-				merge(source, tmpArray, startIndex, middle + 1, endIndex);
+				mergeSort(source, tmpArray, startIndex, middle + 1, endIndex);
 			}
 
 		}
