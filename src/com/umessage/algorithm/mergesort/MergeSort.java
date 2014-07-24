@@ -23,7 +23,7 @@ public class MergeSort {
 	}
 
 	private static void merge(int[] source, int[] tmpArray, int left, int middle, int right) {
-		int leftEnd = middle - 1;// 左字数组最后一个变量的下标
+		int leftEnd = middle - 1;// 左子数组最后一个变量的下标
 		int tmpIndex = 0;// 临时数组保存变量的起始位置
 		int n = right - left + 1;// 临时数组保存的变量个数
 		int leftLow = left;// 本次排序最左下标在源数组中的位置
