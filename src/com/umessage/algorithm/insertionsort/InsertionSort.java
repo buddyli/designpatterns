@@ -1,4 +1,4 @@
-package com.umessage.algorithm.shellsort;
+package com.umessage.algorithm.insertionsort;
 
 /**
  * 插入排序，时间复杂度为O(N^2)，如果源数组是预先排序好的，那么时间复杂度为O(N)。
