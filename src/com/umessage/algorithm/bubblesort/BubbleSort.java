@@ -40,7 +40,7 @@ public class BubbleSort {
 
 		BubbleSort.bubbleSort(array);
 
-		System.out.println("Targer: " + Arrays.toString(array));
+		System.out.println("Target: " + Arrays.toString(array));
 	}
 
 }

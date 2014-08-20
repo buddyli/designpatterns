@@ -1,5 +1,7 @@
 package com.umessage.algorithm.shellsort;
 
+import java.util.Arrays;
+
 /**
  * 希尔排序，冲破二次时间屏障的第一批算法之一。通过合理的选择增量序列，时间复杂度可以达到O(N^4/3)或者O(N^7/6)。
  * 
@@ -27,7 +29,6 @@ public class ShellSort {
 					array[j] = array[j - gap];
 				}
 
-
 				array[j] = tmp;
 			}
 		}
@@ -37,13 +38,11 @@ public class ShellSort {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Integer[] array = { 10, 5, 87, 9, 8 };
-		shellSort(array);
+		Integer[] array = { 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50 };
 
-		for (Integer item : array) {
-			System.out.print(item);
-			System.out.print(", ");
-		}
+		System.out.println("Source: " + Arrays.toString(array));
+		shellSort(array);
+		System.out.println("Target: " + Arrays.toString(array));
 	}
 
 }

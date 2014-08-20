@@ -1,5 +1,7 @@
 package com.umessage.algorithm.insertionsort;
 
+import java.util.Arrays;
+
 /**
  * 插入排序，时间复杂度为O(N^2)，如果源数组是预先排序好的，那么时间复杂度为O(N)。
  * 
@@ -35,12 +37,10 @@ public class InsertionSort {
 	}
 
 	public static void main(String[] args) {
-		Integer[] array = { 10, 5, 87, 9, 8 };
-		insertionSort(array);
+		Integer[] array = { 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50 };
 
-		for (Integer item : array) {
-			System.out.print(item);
-			System.out.print(", ");
-		}
+		System.out.println("Source: " + Arrays.toString(array));
+		insertionSort(array);
+		System.out.println("Target: " + Arrays.toString(array));
 	}
 }

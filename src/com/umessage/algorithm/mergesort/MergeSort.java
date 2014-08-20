@@ -1,5 +1,7 @@
 package com.umessage.algorithm.mergesort;
 
+import java.util.Arrays;
+
 /**
  * 归并排序，递归的经典使用。最大时间复杂度O(NlogN)。
  * <p>
@@ -21,16 +23,16 @@ public class MergeSort {
 	 */
 	public static void main(String[] args) {
 		// source array
-		int[] source = { 8, 7, 34, 12, 323, 56, 76, 86, 45, 90 };
+		Integer[] array = { 3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50 };
 		// temporary array, to store sorted values in each sub merge.
-		int[] tmpArray = new int[source.length];
+		Integer[] tmpArray = new Integer[array.length];
 
-		System.out.println(source);
-		cycleMerge(source, tmpArray, 0, source.length - 1);
-		System.out.println(source);
+		System.out.println("Source: " + Arrays.toString(array));
+		cycleMerge(array, tmpArray, 0, array.length - 1);
+		System.out.println("Target: " + Arrays.toString(array));
 	}
 
-	private static void mergeSort(int[] source, int[] tmpArray, int left, int middle, int right) {
+	private static <T extends Comparable<? super T>> void mergeSort(T[] source, T[] tmpArray, int left, int middle, int right) {
 		int leftEnd = middle - 1;// 左子数组最后一个变量的下标
 		int tmpIndex = 0;// 临时数组保存变量的起始位置
 		int n = right - left + 1;// 临时数组保存的变量个数
@@ -38,9 +40,8 @@ public class MergeSort {
 
 		// while(left <= leftEnd && middle <= right)
 		for (; left <= leftEnd && middle <= right;) {
-			if (source[left] <= source[middle]) {
+			if (source[left].compareTo(source[middle]) < 0) {
 				tmpArray[tmpIndex++] = source[left++];
-
 			} else {
 				tmpArray[tmpIndex++] = source[middle++];
 
@@ -62,7 +63,7 @@ public class MergeSort {
 		}
 	}
 
-	private static void cycleMerge(int[] source, int[] tmpArray, int startIndex, int endIndex) {
+	private static <T extends Comparable<? super T>> void cycleMerge(T[] source, T[] tmpArray, int startIndex, int endIndex) {
 		if (startIndex == endIndex) {// 空数组不用排序；并且当数组中只有两个元素时，也不会再细分数组，而是进入merge()方法进行排序。
 			return;
 		} else {
