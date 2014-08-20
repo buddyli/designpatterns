@@ -7,6 +7,8 @@ import java.util.Arrays;
  * 
  * 使用do...while(true)循环代替以前外层的for循环。
  * 
+ * 动画演示可以参考 http://www.comp.nus.edu.sg/~stevenha/visualization/index.html
+ * 
  * @author licb
  * 
  */

@@ -1,9 +1,11 @@
-package com.umessage.algorithm.selection;
+package com.umessage.algorithm.selectionsort;
 
 import java.util.Arrays;
 
 /**
  * 选择排序，每次循环找出一个最小的，填充到最左第一个还没有排序的位置。
+ * 
+ * 动画演示可以参考 http://www.comp.nus.edu.sg/~stevenha/visualization/index.html
  * 
  * @author licb
  * 
